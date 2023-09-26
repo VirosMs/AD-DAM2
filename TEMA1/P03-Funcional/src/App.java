@@ -1,3 +1,5 @@
+import java.util.Comparator;
+
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class App {
@@ -55,13 +57,15 @@ public class App {
 
         //Comparators
 
-        collection.libros.sort((o1, o2) -> o1.title().compareTo(o2.title()));
+        System.out.println("Pregunta 11: Ordenar los libros A - Z");
+        //collection.libros.sort((o1, o2) -> o1.title().compareTo(o2.title()));
         collection.libros.sort(Book::compareTo);
 
 
         for (Book b : collection.libros){
             System.out.println(b.title());
         }
+
 
     }
 }
