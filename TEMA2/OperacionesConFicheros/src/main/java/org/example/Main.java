@@ -1,25 +1,22 @@
 package org.example;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.List;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
 
-        Path path = Paths.get("/tmp/niats");
+        System.out.println("--------------------------------------------------");
 
+        Planar planar = new Planar(Paths.get("\\\\wsl.localhost\\kali-linux\\tmp\\niats"));
+        long startTime = System.nanoTime();
 
-    }
+        planar.planar();
 
-    protected void aplanar(Path path){
+        long endTime = System.nanoTime();
+        long duration = (endTime - startTime);
+        System.out.println(duration/1000000);
+        System.out.println("--------------------------------------------------");
 
-    }
-
-    protected void aplanarAux(){
-        
     }
 }
