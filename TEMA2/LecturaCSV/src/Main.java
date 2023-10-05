@@ -11,12 +11,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-    /*
+
         try(Stream<String> contenidoFichero = Files.lines(Path.of(".", "src", "resources", "Funko.csv"))){
 
-            List<Funko> listFun = contenidoFichero.map(l -> Arrays.asList(l.split(COMMA_DELIMITER))).map(f -> new Funko(f.get(0), f.get(1), f.get(2), f.get(3), f.get(4), f.get(5) ));
-        }catch (IOException e){
+            List<Funko> listFun = contenidoFichero.map(l -> Arrays.asList(l.split(COMMA_DELIMITER))).skip(1).map(Funko::new).toList();
+        }catch (IOException e) {
 
-        }*/
+        }
     }
 }
