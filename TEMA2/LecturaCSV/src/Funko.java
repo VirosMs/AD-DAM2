@@ -73,7 +73,7 @@ public class Funko {
 
 
         } catch (IllegalArgumentException e) {
-            e.getMessage();
+            cod1 = UUID.randomUUID();
         }
 
 
