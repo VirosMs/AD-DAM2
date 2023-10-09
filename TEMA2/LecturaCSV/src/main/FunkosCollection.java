@@ -10,7 +10,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class FunkosCollection  {
+public class FunkosCollection  implements Serializable{
 
 
     private static List<Funko> listFun = new ArrayList<>();
@@ -76,6 +76,41 @@ public class FunkosCollection  {
         return map;
     }
 
+    /**
+     * This method is used to serialize the object
+     *
+     * @param funkosCollection FunkosCollection
+     * @return boolean
+     */
+    public boolean ser(FunkosCollection funkosCollection){
+        boolean ser = false;
+        try(FileOutputStream fos = new FileOutputStream(Path.of(".", "src", "main", "resources", "funkos.dat").toString());
+            ObjectOutputStream oos = new ObjectOutputStream(fos)){
+            oos.writeObject(funkosCollection);
+            ser = true;
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        return ser;
+    }
+
+    /**
+     * This method is used to deserialize the object
+     *
+     * @return FunkosCollection
+     */
+    public FunkosCollection deser(){
+        FunkosCollection funkos = null;
+        try(FileInputStream fis = new FileInputStream(Path.of(".", "src", "main", "resources", "funkos.dat").toString());
+            ObjectInputStream ois = new ObjectInputStream(fis)){
+            funkos = ((FunkosCollection)ois.readObject());
+            if(funkos == null)
+                throw new NullPointerException("El objeto no puede ser null");
+        }catch (IOException | ClassNotFoundException e){
+            e.printStackTrace();
+        }
+        return funkos;
+    }
 
 
 }

@@ -27,10 +27,10 @@ public class Main {
 
 
         /*print the average of the prices*/
-        System.out.println("El precio medio es: " + funkosCollection.avg());
+       System.out.println("El precio medio es: " + funkosCollection.avg());
 
         /*print funkos grouped by modelo*/
-        System.out.println("Funkos agrupados por modelo:\n"+ mapModelo);
+       System.out.println("Funkos agrupados por modelo:\n"+ mapModelo);
 
 
 
@@ -41,6 +41,13 @@ public class Main {
         /*print funkos by year*/
         funkosCollection.printFunkosByYear();
 
+        if(funkosCollection.ser(funkosCollection)){
+            System.out.println("Se ha serializado correctamente");
+        }else{
+            System.out.println("No se ha serializado correctamente");
+        }
+
+        FunkosCollection a = funkosCollection.deser();
 
 
     }
