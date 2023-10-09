@@ -1,20 +1,34 @@
-import enums.Modelo;
+package main;
+
+import main.enums.Modelo;
 
 import java.time.LocalDate;
-import java.util.*;
+import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
+import java.util.List;
+import java.util.UUID;
 
-import static enums.Modelo.*;
+import static main.enums.Modelo.*;
 
 public class Funko {
     private final UUID cod;
     private final String nombre;
-    private String modelo;
+    private final String modelo;
 
     private final double precio;
 
+
     private final LocalDate fechaLazmiento;
 
-    public Funko(List<String> lista) {
+
+    private final static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+    /**
+     * @param lista List of String
+     *
+     */
+    public Funko(
+    List<String> lista) {
 
         this.cod = compCod(lista.get(0));
 
@@ -66,7 +80,7 @@ public class Funko {
      * @return UUID or null if code is not a UUID
      */
     private UUID compCod(String code) {
-        UUID cod1 = null;
+        UUID cod1;
         try {
 
             cod1 = UUID.fromString(code);
@@ -83,17 +97,33 @@ public class Funko {
 
     @Override
     public String toString() {
-        return "Funko{" +
-                "cod=" + cod +
-                ", nombre='" + nombre + '\'' +
-                ", modelo='" + modelo + '\'' +
-                ", precio=" + precio +
-                ", fechaLazmiento=" + fechaLazmiento +
-                '}';
+        return """
+                Funko{cod= %s, nombre= %s, modelo= %s, precio= %s€, fechaLazmiento= %s}
+                """.formatted(cod, nombre, modelo, precio, fechaLazmiento.format(formatter));
     }
 
 
     public double getPrecio() {
         return precio;
+    }
+
+    public Modelo getModelo() {
+        Modelo mod = null;
+        if (Arrays.stream(Modelo.values()).anyMatch(m -> m.name().equalsIgnoreCase(modelo))) {
+            mod = Modelo.valueOf(modelo);
+        }
+        return mod;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public UUID getCod() {
+        return cod;
+    }
+
+    public LocalDate getFechaLazmiento() {
+        return fechaLazmiento;
     }
 }
