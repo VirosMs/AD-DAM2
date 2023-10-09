@@ -10,13 +10,15 @@ import java.util.UUID;
 
 import static main.enums.Modelo.*;
 
-public class Funko {
+public class Funko  {
+
+
+
     private final UUID cod;
     private final String nombre;
     private final String modelo;
 
     private final double precio;
-
 
     private final LocalDate fechaLazmiento;
 
@@ -115,15 +117,14 @@ public class Funko {
         return mod;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
 
-    public UUID getCod() {
-        return cod;
-    }
+
+
 
     public LocalDate getFechaLazmiento() {
         return fechaLazmiento;
     }
+
+
+
 }
