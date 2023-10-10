@@ -17,8 +17,6 @@ public class Main {
         /*Create a collection of funkos*/
        FunkosCollection funkosCollection = new FunkosCollection(Path.of(".", "src", "main", "resources", "Funko.csv"));
 
-       /*Create a map with the funkos grouped by modelo*/
-        HashMap<Modelo, List<Funko> > mapModelo = funkosCollection.separarPorModelo();
 
         //Consults
 
@@ -30,16 +28,17 @@ public class Main {
        System.out.println("El precio medio es: " + funkosCollection.avg());
 
         /*print funkos grouped by modelo*/
-       System.out.println("Funkos agrupados por modelo:\n"+ mapModelo);
+        funkosCollection.groupFunkosByModelo().forEach((k,v)-> System.out.println(k + " " + v));
 
 
 
         /*print number of funkos by modelo*/
-        funkosCollection.numberOfFunkosByModelo();
+        funkosCollection.groupFunkosByModelo().forEach((k, v) -> System.out.println(k + " " + v.size()));
 
 
         /*print funkos by year*/
-        funkosCollection.printFunkosByYear();
+        funkosCollection.groupFunkosByYear().forEach(System.out::println);
+
 
         if(funkosCollection.ser(funkosCollection)){
             System.out.println("Se ha serializado correctamente");

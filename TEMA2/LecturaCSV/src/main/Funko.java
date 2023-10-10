@@ -90,6 +90,7 @@ public class Funko  {
 
         } catch (IllegalArgumentException e) {
             cod1 = UUID.randomUUID();
+
         }
 
 

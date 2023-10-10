@@ -31,12 +31,13 @@ public class FunkosCollection  implements Serializable{
     }
 
     /*print funkos by year*/
-    public void printFunkosByYear() {
-        listFun.stream().filter(f -> f.getFechaLazmiento().getYear() == 2023).forEach(System.out::println);
+    public List<Funko> groupFunkosByYear() {
+        return listFun.stream().filter(f -> f.getFechaLazmiento().getYear() == 2023).toList();
     }
 
-    public void numberOfFunkosByModelo() {
-        listFun.stream().collect(Collectors.groupingBy(Funko::getModelo)).forEach((k, v) -> System.out.println(k + " " + v.size()));
+
+    public HashMap<Modelo, List<Funko>> groupFunkosByModelo() {
+        return (HashMap<Modelo, List<Funko>>) listFun.stream().collect(Collectors.groupingBy(Funko::getModelo));
     }
 
     /**
@@ -45,9 +46,6 @@ public class FunkosCollection  implements Serializable{
      * @return Optional<Funko>
      */
     public Optional<Funko> findFunkoByPriceReversed() {
-        if(listFun == null)
-            throw new NullPointerException("La lista no puede ser null");
-
         listFun = listFun.stream().sorted(Comparator.comparing(Funko::getPrecio).reversed()).toList();
         return listFun.stream().findFirst();
     }
@@ -63,18 +61,7 @@ public class FunkosCollection  implements Serializable{
         return  Math.round(avg * 100.0d) / 100.0d;
     }
 
-    /**
-     * This method is used to separate the funkos by model
-     *
-     * @return HashMap<Modelo, Funko>
-     */
-    public HashMap<Modelo, List<Funko>> separarPorModelo() {
-        HashMap<Modelo, List<Funko>> map = new HashMap<>();
 
-        listFun.stream().collect(Collectors.groupingBy(Funko::getModelo)).forEach((k, v) -> map.put(k, v.stream().toList()));
-
-        return map;
-    }
 
     /**
      * This method is used to serialize the object
@@ -101,7 +88,7 @@ public class FunkosCollection  implements Serializable{
      */
     public FunkosCollection deser(){
         FunkosCollection funkos = null;
-        try(FileInputStream fis = new FileInputStream(Path.of(".", "src", "main", "resources", "funkos.dat").toString());
+        try(FileInputStream fis = new FileInputStream(Path.of(".", "src", "main", "resources",  "funkos.dat").toString());
             ObjectInputStream ois = new ObjectInputStream(fis)){
             funkos = ((FunkosCollection)ois.readObject());
             if(funkos == null)
