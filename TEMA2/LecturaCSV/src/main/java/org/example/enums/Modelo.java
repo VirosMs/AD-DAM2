@@ -1,4 +1,4 @@
-package main.enums;
+package org.example.enums;
 
 public enum Modelo {
     MARVEL,

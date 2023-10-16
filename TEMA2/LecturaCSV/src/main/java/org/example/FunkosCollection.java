@@ -1,7 +1,7 @@
-package main;
+package org.example;
 
 
-import main.enums.Modelo;
+import org.example.enums.Modelo;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -10,7 +10,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class FunkosCollection  implements Serializable{
+public class FunkosCollection implements Serializable {
 
 
     private static List<Funko> listFun = new ArrayList<>();
@@ -18,9 +18,9 @@ public class FunkosCollection  implements Serializable{
     private final static String COMMA_DELIMITER = ",";
 
     public FunkosCollection(Path path) {
-      if (path == null) {
-        throw new NullPointerException("Path cannot be null");
-      }
+        if (path == null) {
+            throw new NullPointerException("Path cannot be null");
+        }
 
         try (Stream<String> contenidoFichero = Files.lines(path)) {
             listFun = contenidoFichero.map(l -> Arrays.asList(l.split(COMMA_DELIMITER))).skip(1).map(Funko::new).toList();
@@ -55,12 +55,11 @@ public class FunkosCollection  implements Serializable{
      *
      * @return avg rounded to 2 decimals
      */
-    public double avg(){
+    public double avg() {
         double avg = listFun.stream().mapToDouble(Funko::getPrecio).average().orElse(0.0);
 
-        return  Math.round(avg * 100.0d) / 100.0d;
+        return Math.round(avg * 100.0d) / 100.0d;
     }
-
 
 
     /**
@@ -69,13 +68,13 @@ public class FunkosCollection  implements Serializable{
      * @param funkosCollection FunkosCollection
      * @return boolean
      */
-    public boolean ser(FunkosCollection funkosCollection){
+    public boolean ser(FunkosCollection funkosCollection) {
         boolean ser = false;
-        try(FileOutputStream fos = new FileOutputStream(Path.of(".", "src", "main", "resources", "funkos.dat").toString());
-            ObjectOutputStream oos = new ObjectOutputStream(fos)){
+        try (FileOutputStream fos = new FileOutputStream(Path.of(".", "src", "main", "resources", "funkos.dat").toString());
+             ObjectOutputStream oos = new ObjectOutputStream(fos)) {
             oos.writeObject(funkosCollection);
             ser = true;
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return ser;
@@ -86,14 +85,14 @@ public class FunkosCollection  implements Serializable{
      *
      * @return FunkosCollection
      */
-    public FunkosCollection deser(){
+    public FunkosCollection deser() {
         FunkosCollection funkos = null;
-        try(FileInputStream fis = new FileInputStream(Path.of(".", "src", "main", "resources",  "funkos.dat").toString());
-            ObjectInputStream ois = new ObjectInputStream(fis)){
-            funkos = ((FunkosCollection)ois.readObject());
-            if(funkos == null)
+        try (FileInputStream fis = new FileInputStream(Path.of(".", "src", "main", "resources", "funkos.dat").toString());
+             ObjectInputStream ois = new ObjectInputStream(fis)) {
+            funkos = ((FunkosCollection) ois.readObject());
+            if (funkos == null)
                 throw new NullPointerException("El objeto no puede ser null");
-        }catch (IOException | ClassNotFoundException e){
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
         return funkos;

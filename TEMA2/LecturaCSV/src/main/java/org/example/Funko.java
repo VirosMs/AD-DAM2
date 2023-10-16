@@ -1,6 +1,6 @@
-package main;
+package org.example;
 
-import main.enums.Modelo;
+import org.example.enums.Modelo;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -8,10 +8,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
-import static main.enums.Modelo.*;
+import static org.example.enums.Modelo.*;
 
-public class Funko  {
-
+public class Funko {
 
 
     private final UUID cod;
@@ -27,10 +26,9 @@ public class Funko  {
 
     /**
      * @param lista List of String
-     *
      */
     public Funko(
-    List<String> lista) {
+            List<String> lista) {
 
         this.cod = compCod(lista.get(0));
 
@@ -119,13 +117,9 @@ public class Funko  {
     }
 
 
-
-
-
     public LocalDate getFechaLazmiento() {
         return fechaLazmiento;
     }
-
 
 
 }

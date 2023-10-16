@@ -1,7 +1,7 @@
-package main;
+package org.example;
 
 
-import main.enums.Modelo;
+import org.example.enums.Modelo;
 
 import java.nio.file.Path;
 import java.util.HashMap;
@@ -15,7 +15,7 @@ public class Main {
 
 
         /*Create a collection of funkos*/
-       FunkosCollection funkosCollection = new FunkosCollection(Path.of(".", "src", "main", "resources", "Funko.csv"));
+        FunkosCollection funkosCollection = new FunkosCollection(Path.of(".", "src", "main","java", "org", "example", "resources", "Funko.csv"));
 
 
         //Consults
@@ -25,10 +25,10 @@ public class Main {
 
 
         /*print the average of the prices*/
-       System.out.println("El precio medio es: " + funkosCollection.avg());
+        System.out.println("El precio medio es: " + funkosCollection.avg());
 
         /*print funkos grouped by modelo*/
-        funkosCollection.groupFunkosByModelo().forEach((k,v)-> System.out.println(k + " " + v));
+        funkosCollection.groupFunkosByModelo().forEach((k, v) -> System.out.println(k + " " + v));
 
 
 
@@ -40,9 +40,9 @@ public class Main {
         funkosCollection.groupFunkosByYear().forEach(System.out::println);
 
 
-        if(funkosCollection.ser(funkosCollection)){
+        if (funkosCollection.ser(funkosCollection)) {
             System.out.println("Se ha serializado correctamente");
-        }else{
+        } else {
             System.out.println("No se ha serializado correctamente");
         }
 
