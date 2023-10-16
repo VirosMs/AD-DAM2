@@ -1,5 +1,6 @@
 package org.example;
 
+import lombok.Data;
 import org.example.enums.Modelo;
 
 import java.time.LocalDate;
@@ -9,7 +10,7 @@ import java.util.List;
 import java.util.UUID;
 
 import static org.example.enums.Modelo.*;
-
+@Data
 public class Funko {
 
 
@@ -104,9 +105,7 @@ public class Funko {
     }
 
 
-    public double getPrecio() {
-        return precio;
-    }
+
 
     public Modelo getModelo() {
         Modelo mod = null;
@@ -117,9 +116,7 @@ public class Funko {
     }
 
 
-    public LocalDate getFechaLazmiento() {
-        return fechaLazmiento;
-    }
+
 
 
 }
