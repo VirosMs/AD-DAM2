@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.UUID;
 
 import static org.example.enums.Modelo.*;
+
 @Data
 public class Funko {
 
@@ -17,9 +18,7 @@ public class Funko {
     private final UUID cod;
     private final String nombre;
     private final String modelo;
-
     private final double precio;
-
     private final LocalDate fechaLazmiento;
 
 
@@ -28,16 +27,20 @@ public class Funko {
     /**
      * @param lista List of String
      */
-    public Funko(
-            List<String> lista) {
-
+    public Funko(List<String> lista) {
+        if(lista == null){
+            throw new NullPointerException("Lista no puede ser null");
+        }
+        if (lista.size() != 5) {
+            throw new IllegalArgumentException("La lista debe tener 5 elementos");
+        }
         this.cod = compCod(lista.get(0));
 
         this.nombre = lista.get(1);
 
         this.modelo = compMod(lista.get(2));
 
-        this.precio = convertDuble(lista.get(3));
+        this.precio = convertDouble(lista.get(3));
 
         this.fechaLazmiento = LocalDate.parse(lista.get(4));
 
@@ -50,7 +53,7 @@ public class Funko {
      * @param pre String
      * @return precio rounded to 2 decimals or 0.0 if pre is not a precio
      */
-    private double convertDuble(String pre) {
+    private double convertDouble(String pre){
         double pre1 = 0.0d;
         try {
             pre1 = Double.parseDouble(pre);
@@ -114,9 +117,4 @@ public class Funko {
         }
         return mod;
     }
-
-
-
-
-
 }

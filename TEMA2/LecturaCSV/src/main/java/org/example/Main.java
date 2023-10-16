@@ -37,7 +37,7 @@ public class Main {
 
 
         /*print funkos by year*/
-        funkosCollection.groupFunkosByYear().forEach(System.out::println);
+        funkosCollection.groupFunkosByYear(2023).forEach(System.out::println);
 
 
         if (funkosCollection.ser(funkosCollection)) {

@@ -31,8 +31,8 @@ public class FunkosCollection implements Serializable {
     }
 
     /*print funkos by year*/
-    public List<Funko> groupFunkosByYear() {
-        return listFun.stream().filter(f -> f.getFechaLazmiento().getYear() == 2023).toList();
+    public List<Funko> groupFunkosByYear(int year) {
+        return listFun.stream().filter(f -> f.getFechaLazmiento().getYear() == year).toList();
     }
 
 
@@ -71,7 +71,7 @@ public class FunkosCollection implements Serializable {
     public boolean ser(FunkosCollection funkosCollection) {
         boolean ser = false;
         try (FileOutputStream fos = new FileOutputStream(Path.of(".", "src", "main", "resources", "funkos.dat").toString());
-             ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+                ObjectOutputStream oos = new ObjectOutputStream(fos)) {
             oos.writeObject(funkosCollection);
             ser = true;
         } catch (IOException e) {
@@ -88,7 +88,7 @@ public class FunkosCollection implements Serializable {
     public FunkosCollection deser() {
         FunkosCollection funkos = null;
         try (FileInputStream fis = new FileInputStream(Path.of(".", "src", "main", "resources", "funkos.dat").toString());
-             ObjectInputStream ois = new ObjectInputStream(fis)) {
+                ObjectInputStream ois = new ObjectInputStream(fis)) {
             funkos = ((FunkosCollection) ois.readObject());
             if (funkos == null)
                 throw new NullPointerException("El objeto no puede ser null");

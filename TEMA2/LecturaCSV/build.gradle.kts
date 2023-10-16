@@ -12,8 +12,10 @@ repositories {
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
-    compileOnly("org.projectlombok:lombok:1.18.30")
     testImplementation("org.mockito:mockito-junit-jupiter:5.6.0")
+
+    compileOnly("org.projectlombok:lombok:1.18.30")
+    annotationProcessor ("org.projectlombok:lombok:1.18.30")
 }
 
 tasks.test {
