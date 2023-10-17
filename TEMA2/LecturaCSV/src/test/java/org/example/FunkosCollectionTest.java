@@ -15,6 +15,8 @@ import static org.mockito.Mockito.*;
 class FunkosCollectionTest {
     @Mock
     FunkosCollection funkosCollection;
+
+
     @BeforeEach
     void setUp() {
         funkosCollection = mock(FunkosCollection.class);
