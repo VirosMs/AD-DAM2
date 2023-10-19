@@ -1,3 +1,11 @@
+/**
+ * Clase que contiene los métodos para escribir y leer una lista de objetos en un fichero json
+ *
+ * @version 1.0
+ * @since 2021-04-12
+ * @autor Charles Arruda
+ *
+ */
 package org.example.utils;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -10,16 +18,26 @@ import java.util.List;
 
 public class OperacionesJson {
 
+    /**
+     * Método que escribe una lista de objetos en un fichero json
+     * @param lista Lista de objetos
+     * @param ruta Ruta del fichero json
+     */
     public static void escribirListaObjetosJson(List<Book> lista, Path ruta) {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
             objectMapper.writeValue(ruta.toFile(), lista);
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new RuntimeException(e.getMessage());
         }
     }
 
+    /**
+     * Método que lee una lista de objetos de un fichero json
+     * @param ruta Ruta del fichero json
+     * @return Devuelve la lista de objetos
+     */
     public static List<Book> leerListaObjetosJson(Path ruta) {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
@@ -29,12 +47,4 @@ public class OperacionesJson {
         }
     }
 
-    public static String findBookByTitleOrAuthor(String title, String author, List<Book> books) {
-        for(Book book : books) {
-            if(book.getTitle().equals(title) || book.getAuthor().equals(author)) {
-                return book.getIsbn();
-            }
-        }
-        return "No se ha encontrado el libro";
-    }
 }
