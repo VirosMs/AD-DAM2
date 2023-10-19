@@ -1,7 +1,27 @@
 package org.example;
 
+import org.example.libros.Book;
+import org.example.utils.OperacionesJson;
+
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+
+        Path ruta = Path.of(".", "src", "main", "resources", "books.json");
+        List<Book> list = new ArrayList<>() {{
+            add(new Book("1234567890123", "El Quijote", "Cervantes", 1000, 1605));
+            add(new Book("1234567890124", "El Quijote 2", "Cervantes", 1000, 1605));
+            add(new Book("1234567890125", "El Quijote 3", "Cervantes", 1000, 1605));
+        }};
+
+
+
+        OperacionesJson.escribirListaObjetosJson(list, ruta);
+
+        List<Book> books = OperacionesJson.leerListaObjetosJson(ruta);
+        System.out.println(books);
     }
 }

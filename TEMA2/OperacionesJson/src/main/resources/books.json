@@ -1,0 +1,19 @@
+[ {
+  "isbn" : "1234567890123",
+  "title" : "El Quijote",
+  "author" : "Cervantes",
+  "numeroPaginas" : 1000,
+  "anioPublicacion" : 1605
+}, {
+  "isbn" : "1234567890124",
+  "title" : "El Quijote 2",
+  "author" : "Cervantes",
+  "numeroPaginas" : 1000,
+  "anioPublicacion" : 1605
+}, {
+  "isbn" : "1234567890125",
+  "title" : "El Quijote 3",
+  "author" : "Cervantes",
+  "numeroPaginas" : 1000,
+  "anioPublicacion" : 1605
+} ]
