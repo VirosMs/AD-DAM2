@@ -1,3 +1,11 @@
+/**
+ * Clase principal del proyecto
+ * Clase que contiene el método main
+ * @version 1.0
+ * @since 2021-04-12
+ * @autor Charles Arruda
+ *
+ */
 package org.example;
 
 import org.example.libros.Book;
