@@ -17,13 +17,6 @@ public class AtletaFemeninaCollections {
     @JacksonXmlProperty(localName = "atletaFemenina")
     private List<AtletaFemenina> atletas;
 
-public static AtletaFemenina leerObjetoXml(Path ruta){
-    try{
-        XmlMapper xmlMapper = new XmlMapper();
-        return xmlMapper.readValue(ruta.toFile(), AtletaFemenina.class);
-    }catch (Exception e) {
-        throw new RuntimeException(e);
-    }
-}
+
 
 }
