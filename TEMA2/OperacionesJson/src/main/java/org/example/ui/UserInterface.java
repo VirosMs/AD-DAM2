@@ -1,12 +1,3 @@
-/**
- * Clase UserInterface
- * Clase que contiene los métodos para mostrar el menú y ejecutar las opciones
- *
- * @version 1.0
- * @since 2021-04-12
- * @author Charles Arruda
- */
-
 package org.example.ui;
 
 import lombok.AllArgsConstructor;
@@ -18,6 +9,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
 
+/**
+ * Clase UserInterface
+ * Clase que contiene los métodos para mostrar el menú y ejecutar las opciones
+ *
+ * @version 1.0
+ * @since 2021-04-12
+ * @author Charles Arruda
+ */
 @Data
 @AllArgsConstructor
 public class UserInterface {
@@ -25,7 +24,6 @@ public class UserInterface {
 
     /**
      * Constructor de la clase UserInterface
-     *
      */
     public UserInterface() {
         this.br = new BufferedReader(new InputStreamReader(System.in));

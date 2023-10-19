@@ -1,11 +1,3 @@
-/**
- * Clase principal del proyecto
- * Clase que contiene el método main
- * @version 1.0
- * @since 2021-04-12
- * @autor Charles Arruda
- *
- */
 package org.example;
 
 import org.example.libros.Book;
@@ -18,7 +10,21 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Clase principal del proyecto
+ * Clase que contiene el método main
+ * @version 1.0
+ * @since 2021-04-12
+ * @author Charles Arruda
+ * @see UserInterface
+ * @see OperacionesJson
+ * @see Book
+ */
 public class Main {
+    /**
+     * Método main
+     * @param args Argumentos de la línea de comandos
+     */
     public static void main(String[] args) {
 
         Path ruta = Path.of(".", "src", "main", "resources", "books.json");

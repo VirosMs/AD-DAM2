@@ -1,11 +1,3 @@
-/**
- * Clase Book (Libro)
- * Clase que contiene los atributos de un libro y un método para buscar un libro por título o autor
- *
- * @version 1.0
- * @since 2021-04-12
- * @autor Charles Arruda
- */
 package org.example.libros;
 
 import lombok.AllArgsConstructor;
@@ -14,6 +6,14 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
+/**
+ * Clase Book (Libro)
+ * Clase que contiene los atributos de un libro y un método para buscar un libro por título o autor
+ *
+ * @version 1.0
+ * @since 2021-04-12
+ * @author Charles Arruda
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

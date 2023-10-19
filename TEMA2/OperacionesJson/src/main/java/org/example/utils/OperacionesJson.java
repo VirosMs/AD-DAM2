@@ -1,11 +1,3 @@
-/**
- * Clase que contiene los métodos para escribir y leer una lista de objetos en un fichero json
- *
- * @version 1.0
- * @since 2021-04-12
- * @autor Charles Arruda
- *
- */
 package org.example.utils;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -15,7 +7,14 @@ import org.example.libros.Book;
 
 import java.nio.file.Path;
 import java.util.List;
-
+/**
+ * Clase que contiene los métodos para escribir y leer una lista de objetos en un fichero json
+ *
+ * @version 1.0
+ * @since 2021-04-12
+ * @author Charles Arruda
+ *
+ */
 public class OperacionesJson {
 
     /**
