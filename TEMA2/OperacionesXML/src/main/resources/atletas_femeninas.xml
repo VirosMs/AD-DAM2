@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<atletasFemeninas>
+    <atletaFemenina>
+        <nombre>María</nombre>
+        <edad>25</edad>
+        <pais>España</pais>
+        <pruebas>
+            <prueba>
+                100 metros lisos
+            </prueba>
+        </pruebas>
+    </atletaFemenina>
+    <atletaFemenina>
+        <nombre>Ana</nombre>
+        <edad>30</edad>
+        <pais>Brasil</pais>
+        <pruebas>
+            <prueba>
+                corrida con obstáculos
+            </prueba>
+        </pruebas>
+    </atletaFemenina>
+</atletasFemeninas>
