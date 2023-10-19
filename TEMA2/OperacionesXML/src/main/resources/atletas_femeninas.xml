@@ -1,23 +1,32 @@
-<?xml version="1.0" encoding="UTF-8" ?>
 <atletasFemeninas>
-    <atletaFemenina>
-        <nombre>María</nombre>
-        <edad>25</edad>
-        <pais>España</pais>
-        <pruebas>
-            <prueba>
-                100 metros lisos
-            </prueba>
-        </pruebas>
-    </atletaFemenina>
-    <atletaFemenina>
-        <nombre>Ana</nombre>
-        <edad>30</edad>
-        <pais>Brasil</pais>
-        <pruebas>
-            <prueba>
-                corrida con obstáculos
-            </prueba>
-        </pruebas>
-    </atletaFemenina>
+  <atleta>
+    <edad>20</edad>
+    <pais>España</pais>
+    <nombre>Maria</nombre>
+    <pruebas>
+      <prueba>100m</prueba>
+      <prueba>200m</prueba>
+      <prueba>400m</prueba>
+    </pruebas>
+  </atleta>
+  <atleta>
+    <edad>22</edad>
+    <pais>España</pais>
+    <nombre>Laura</nombre>
+    <pruebas>
+      <prueba>100m</prueba>
+      <prueba>200m</prueba>
+      <prueba>400m</prueba>
+    </pruebas>
+  </atleta>
+  <atleta>
+    <edad>24</edad>
+    <pais>España</pais>
+    <nombre>Sara</nombre>
+    <pruebas>
+      <prueba>100m</prueba>
+      <prueba>200m</prueba>
+      <prueba>400m</prueba>
+    </pruebas>
+  </atleta>
 </atletasFemeninas>

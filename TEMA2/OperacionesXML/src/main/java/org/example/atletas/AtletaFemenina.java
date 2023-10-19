@@ -3,12 +3,17 @@ package org.example.atletas;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Data
-@JacksonXmlRootElement(localName = "atletaFemenina")
+@NoArgsConstructor
+@AllArgsConstructor
+
+@JacksonXmlRootElement(localName = "atleta")
 public class AtletaFemenina {
 
 
@@ -19,5 +24,6 @@ public class AtletaFemenina {
     @JacksonXmlElementWrapper(localName = "pruebas")
     @JacksonXmlProperty(localName = "prueba")
     private List<String> prueba;
+
 
 }
