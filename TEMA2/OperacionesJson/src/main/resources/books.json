@@ -16,4 +16,10 @@
   "author" : "Cervantes",
   "numeroPaginas" : 1000,
   "anioPublicacion" : 1605
+}, {
+  "isbn" : "1234567890126",
+  "title" : "Monte Cristo",
+  "author" : "Dumas",
+  "numeroPaginas" : 1000,
+  "anioPublicacion" : 1605
 } ]
