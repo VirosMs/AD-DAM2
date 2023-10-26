@@ -1,12 +1,12 @@
 package org.example;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonPropertyDescription;
-import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import lombok.*;
 
 import java.util.List;
 
+/**
+ * This class is used to create a new object of type Buddies.
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -35,6 +35,10 @@ public class Buddies {
                 '}';
     }
 
+    /**
+     * This method is used to get the value of isHiddenIfNotOwned.
+     * The method parse the String to Boolean.
+     */
     public void setIsHiddenIfNotOwned(String isHiddenIfNotOwned) {
         this.isHiddenIfNotOwned = Boolean.parseBoolean(isHiddenIfNotOwned);
     }
