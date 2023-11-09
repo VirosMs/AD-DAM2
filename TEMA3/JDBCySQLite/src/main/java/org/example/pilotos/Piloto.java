@@ -19,7 +19,16 @@ public class Piloto {
     private String url;
 
     public Piloto(String code, String forename, String surname, String dob, String nationality, String url){
+        this.code = code;
+        this.forename = forename;
+        this.surname = surname;
+        this.dob = LocalDate.parse(dob);
+        this.nationality = nationality;
+        this.url = url;
+    }
 
+    public Piloto(int driverId, String code, String forename, String surname, String dob, String nationality, String url){
+        this.driverId = driverId;
         this.code = code;
         this.forename = forename;
         this.surname = surname;
