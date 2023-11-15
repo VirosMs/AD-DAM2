@@ -14,7 +14,6 @@ public class Drivers {
     private String surname;
     private LocalDate dob;
     private String nationality;
-
     private Constructors constructors;
     private String url;
 
