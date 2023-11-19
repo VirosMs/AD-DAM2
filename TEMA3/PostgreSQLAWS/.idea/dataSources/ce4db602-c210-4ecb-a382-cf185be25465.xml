@@ -4324,6 +4324,7 @@ idle_session_timeout=0</Config>
     </schema>
     <routine id="273" parent="272" name="get_drivers_standings">
       <ObjectId>16512</ObjectId>
+      <Outdated>1</Outdated>
       <ResultsDefinition>TABLE(driver text, points bigint)</ResultsDefinition>
       <ReturnsSet>1</ReturnsSet>
       <SourceTextLength>215</SourceTextLength>
@@ -4334,6 +4335,7 @@ idle_session_timeout=0</Config>
     <routine id="274" parent="272" name="get_results_by_driver">
       <ArgumentsDefinition>driver_code character varying</ArgumentsDefinition>
       <ObjectId>16511</ObjectId>
+      <Outdated>1</Outdated>
       <ResultsDefinition>TABLE(round integer, circuit character varying, result integer, points integer, date date)</ResultsDefinition>
       <ReturnsSet>1</ReturnsSet>
       <SourceTextLength>236</SourceTextLength>
