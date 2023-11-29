@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="f12006@virosms-f1bbdd.cpnousokn5wn.us-east-1.rds.amazonaws.com" uuid="f7fe8548-a36d-446d-a499-fe0e618a1f52">
+    <data-source source="LOCAL" name="f12006@virosms-f1bbdd.cpnousokn5wn.us-east-1.rds.amazonaws.com" uuid="ce4db602-c210-4ecb-a382-cf185be25465">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>

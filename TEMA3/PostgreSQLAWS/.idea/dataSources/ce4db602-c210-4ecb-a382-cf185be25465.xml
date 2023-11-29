@@ -18,7 +18,7 @@
 16384||16394|T|G
 16406||-9223372036854775808|C|G
 16406||16386|C|G</Grants>
-      <IntrospectionStateNumber>2585</IntrospectionStateNumber>
+      <IntrospectionStateNumber>4122</IntrospectionStateNumber>
       <ServerVersion>15.3</ServerVersion>
       <StartupTime>1699985019</StartupTime>
       <TimeZones>true ACDT
@@ -816,7 +816,7 @@ false Zulu
 14146||10|C|G
 14146||-9223372036854775808|U|G
 14146||10|U|G</Grants>
-      <IntrospectionStateNumber>2585</IntrospectionStateNumber>
+      <IntrospectionStateNumber>4122</IntrospectionStateNumber>
       <ObjectId>16399</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -4315,15 +4315,16 @@ default_transaction_read_only=off</Config>
     <schema id="272" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>2585</IntrospectionStateNumber>
-      <IntrospectionTimestamp>2023-11-15.18:50:33.688</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-11-15.17:50:38</LocalIntrospectionTimestamp>
+      <IntrospectionStateNumber>4122</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2023-11-16.16:08:16.364</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2023-11-16.15:08:20</LocalIntrospectionTimestamp>
       <ObjectId>2200</ObjectId>
       <StateNumber>518</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
     </schema>
     <routine id="273" parent="272" name="get_drivers_standings">
       <ObjectId>16512</ObjectId>
+      <Outdated>1</Outdated>
       <ResultsDefinition>TABLE(driver text, points bigint)</ResultsDefinition>
       <ReturnsSet>1</ReturnsSet>
       <SourceTextLength>215</SourceTextLength>
@@ -4334,6 +4335,7 @@ default_transaction_read_only=off</Config>
     <routine id="274" parent="272" name="get_results_by_driver">
       <ArgumentsDefinition>driver_code character varying</ArgumentsDefinition>
       <ObjectId>16511</ObjectId>
+      <Outdated>1</Outdated>
       <ResultsDefinition>TABLE(round integer, circuit character varying, result integer, points integer, date date)</ResultsDefinition>
       <ReturnsSet>1</ReturnsSet>
       <SourceTextLength>236</SourceTextLength>
