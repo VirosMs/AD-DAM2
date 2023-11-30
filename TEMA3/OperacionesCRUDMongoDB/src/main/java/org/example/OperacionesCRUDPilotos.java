@@ -36,6 +36,10 @@ public class OperacionesCRUDPilotos {
         collection.deleteOne(eq(CODE, driver.getCode()));
     }
 
+    public void mostrarPilotosOrdenadoresPorEdadDescendente(MongoCollection<Driver> collection){
+        collection.find().sort("{dob: -1}").forEach(System.out::println);
+    }
+
     public void printPilotos(MongoCollection<Driver> collection){
         collection.find().forEach(System.out::println);
     }
