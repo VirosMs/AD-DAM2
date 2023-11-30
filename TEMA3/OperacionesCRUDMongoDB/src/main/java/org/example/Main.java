@@ -27,7 +27,7 @@ public class Main {
         OperacionesCRUDPilotos operacionesCRUDPilotos = new OperacionesCRUDPilotos();
 
         try(MongoClient dbClient = MongoClients.create("mongodb://" + USER + ":" + PASSWORD + "@" + IP + ":27017/" + DB_NAME + "?authSource=" + DB_NAME)){
-            ;
+
             CodecProvider pojoCodecProvider = PojoCodecProvider.builder().automatic(true).build();
             CodecRegistry pojoCodecRegistry = fromRegistries(getDefaultCodecRegistry(), fromProviders(pojoCodecProvider));
             MongoDatabase db = dbClient.getDatabase(DB_NAME).withCodecRegistry(pojoCodecRegistry);

@@ -11,23 +11,23 @@ import java.util.Date;
 public class Driver {
     ObjectId id;
     private String code;
-    private Constructor constructor;
+    private Constructor constructors;
     private Date dob;
-    private int driverId;
+    private int driverid;
     private String forename;
     private String surname;
     private String nationality;
     private String url;
 
-    public Driver(String code, Constructor constructor, Date dob, int driverId, String forename,
+    public Driver(String code, Constructor constructors, Date dob, int driverid, String forename,
                   String nationality, String surname  , String url){
         this.code = code;
-        this.driverId = driverId;
+        this.driverid = driverid;
         this.forename = forename;
         this.surname = surname;
         this.nationality = nationality;
         this.dob = dob;
-        this.constructor = constructor;
+        this.constructors = constructors;
         this.url = url;
     }
 }
