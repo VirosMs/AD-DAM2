@@ -1,17 +1,17 @@
 package org.example.entities;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.bson.types.ObjectId;
-import org.example.entities.Constructors;
 
-import java.sql.Date;
+import java.util.Date;
 
 @Data
-public class Drivers {
+@NoArgsConstructor
+public class Driver {
     ObjectId id;
     private String code;
-    private Constructors constructors;
+    private Constructor constructor;
     private Date dob;
     private int driverId;
     private String forename;
@@ -19,16 +19,15 @@ public class Drivers {
     private String nationality;
     private String url;
 
-    public Drivers(String code, Constructors constructor, Date dob, int driverId, String forename,
-                   String nationality, String surname  , String url){
+    public Driver(String code, Constructor constructor, Date dob, int driverId, String forename,
+                  String nationality, String surname  , String url){
         this.code = code;
         this.driverId = driverId;
         this.forename = forename;
         this.surname = surname;
         this.nationality = nationality;
         this.dob = dob;
-        this.constructors = constructor;
+        this.constructor = constructor;
         this.url = url;
-
     }
 }

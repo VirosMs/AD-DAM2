@@ -1,18 +1,18 @@
 package org.example.entities;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-
+import lombok.NoArgsConstructor;
 
 
 @Data
-public class Constructors {
+@NoArgsConstructor
+public class Constructor {
     private String constructorref;
     private String name;
     private String nationality;
     private String url;
 
-    public Constructors(String constructorref, String name, String nationality, String url){
+    public Constructor(String constructorref, String name, String nationality, String url){
         this.constructorref = constructorref;
         this.name = name;
         this.nationality = nationality;
