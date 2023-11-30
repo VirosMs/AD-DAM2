@@ -13,6 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import static com.mongodb.MongoClientSettings.getDefaultCodecRegistry;
 import static org.bson.codecs.configuration.CodecRegistries.fromProviders;
@@ -41,13 +42,22 @@ public class Main {
 
             operacionesCRUDPilotos.crearPiloto(driver, collection);
 
-            System.out.println(driver);
+            //System.out.println(driver);
 
             //operacionesCRUDPilotos.printPilotos(collection);
 
-            Driver driver2 = operacionesCRUDPilotos.leerPiloto(2, collection);
+            //Driver driver2 = operacionesCRUDPilotos.leerPiloto(2, collection);
 
-            System.out.println(driver2);
+            //System.out.println(driver2);
+
+            //List<Driver> drivers = operacionesCRUDPilotos.leerPilotos(collection);
+
+            //drivers.forEach(System.out::println);
+
+            driver.setConstructors(null);
+            operacionesCRUDPilotos.actualizarPiloto(driver, collection);
+
+            operacionesCRUDPilotos.borrarPiloto(driver, collection);
 
         } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
