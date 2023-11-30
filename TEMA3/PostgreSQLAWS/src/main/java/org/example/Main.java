@@ -14,9 +14,9 @@ public class Main {
         databaseManager.deleteConstructor("seat");
 
 
-        Constructors constructor = new Constructors("seat", "Seat F1", "Spain", "test");
+        Constructors constructor = new Constructors("volvo", "volvo F1", "Spain", "test");
         Drivers driver = new Drivers
-                ("nor", "Lando", "Norris", "2023-11-16", "test", constructor, "test");
+                ("alo", "Lando", "Norris", "2023-11-16", "test", constructor, "test");
 
         Drivers driver2 = new Drivers
                 ("nor", "Daniel", "Ricciardo", "2023-11-16", "test", constructor, "test");
