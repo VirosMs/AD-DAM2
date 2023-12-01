@@ -9,8 +9,7 @@ import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.codecs.pojo.PojoCodecProvider;
 import org.example.entities.Constructor;
 import org.example.entities.Driver;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 
 import java.time.LocalDate;
 import java.util.List;
@@ -24,10 +23,10 @@ import static org.bson.codecs.configuration.CodecRegistries.fromRegistries;
 public class Main {
     public static void main(String[] args) {
 
-        Logger logger = LoggerFactory.getLogger("org.mongodb.driver");
+        //Logger logger = LoggerFactory.getLogger("org.mongodb.driver");
         OperacionesCRUDPilotos operacionesCRUDPilotos = new OperacionesCRUDPilotos();
 
-        try(MongoClient dbClient = MongoClients.create("mongodb://" + USER + ":" + PASSWORD + "@" + IP + ":27017/" + DB_NAME + "?authSource=" + DB_NAME)){
+        try(MongoClient dbClient = MongoClients.create("mongodb://" + USER + ":" + PASSWORD + "@" + IP + ":"+PORT+"/" + DB_NAME + "?authSource=" + DB_NAME)){
 
             CodecProvider pojoCodecProvider = PojoCodecProvider.builder().automatic(true).build();
             CodecRegistry pojoCodecRegistry = fromRegistries(getDefaultCodecRegistry(), fromProviders(pojoCodecProvider));
@@ -42,23 +41,26 @@ public class Main {
 
             operacionesCRUDPilotos.crearPiloto(driver, collection);
 
-            //System.out.println(driver);
+            System.out.println(driver);
 
-            //operacionesCRUDPilotos.printPilotos(collection);
+            operacionesCRUDPilotos.printPilotos(collection);
 
-            //Driver driver2 = operacionesCRUDPilotos.leerPiloto(2, collection);
+            Driver driver2 = operacionesCRUDPilotos.leerPiloto(2, collection);
 
-            //System.out.println(driver2);
+            System.out.println(driver2);
 
-            //List<Driver> drivers = operacionesCRUDPilotos.leerPilotos(collection);
+            List<Driver> drivers = operacionesCRUDPilotos.leerPilotos(collection);
 
-            //drivers.forEach(System.out::println);
+            drivers.forEach(System.out::println);
 
             driver.setConstructors(null);
             operacionesCRUDPilotos.actualizarPiloto(driver, collection);
 
             operacionesCRUDPilotos.borrarPiloto(driver, collection);
 
+            operacionesCRUDPilotos.mostrarPilotosOrdenadoresPorEdadDescendente(collection);
+
+            operacionesCRUDPilotos.mostrarPilotosConEdadMoyorQue(30, collection);
         } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
         }
