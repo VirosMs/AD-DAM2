@@ -1,13 +1,18 @@
 package org.example;
 
 import com.mongodb.client.MongoCollection;
+import org.bson.conversions.Bson;
 import org.example.entities.Driver;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import static com.mongodb.client.model.Filters.eq;
 
+
+import static com.mongodb.client.model.Sorts.descending;
 import static org.example.StaticVariables.*;
 
 public class OperacionesCRUDPilotos {
@@ -37,8 +42,28 @@ public class OperacionesCRUDPilotos {
     }
 
     public void mostrarPilotosOrdenadoresPorEdadDescendente(MongoCollection<Driver> collection){
-        collection.find().sort("{dob: -1}").forEach(System.out::println);
+        Bson sort = descending("dob");
+        collection.find().sort(sort).forEach(System.out::println);
     }
+
+    public void mostrarPilotosConEdadMoyorQue(int edad, MongoCollection<Driver> collection) {
+
+        collection.find().sort(descending("dob")).forEach(driver -> {
+            if(calcYear(driver.getDob()) > edad)
+                System.out.println(driver.getCode() + " " + driver.getDob().toString());
+        });
+
+    }
+
+    protected int calcYear(Date date){
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        return SEASON_DATE - calendar.get(Calendar.YEAR);
+    }
+
+
+
+
 
     public void printPilotos(MongoCollection<Driver> collection){
         collection.find().forEach(System.out::println);
