@@ -35,6 +35,6 @@ public class Circuit {
 
     private String url;
 
-    @OneToOne(mappedBy = "circuit")
+    @OneToOne(mappedBy = "circuit", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Race race;
 }

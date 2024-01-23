@@ -9,7 +9,7 @@ public interface RaceRepository extends JpaRepository<Race, Long> {
 
     Optional<Race> findByRound(int round);
 
-    void deleteRaceByRaceId(int raceId);
+    void deleteRaceByRaceId(Long raceId);
 
 
 }

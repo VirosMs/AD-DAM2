@@ -1,5 +1,6 @@
 package org.virosms.relaciones.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -35,7 +36,9 @@ public class Race {
 
     private String url;
 
-    @OneToOne
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name = "circuitid")
+    @JsonIgnoreProperties("race")
+
     private Circuit circuit;
 }

@@ -12,7 +12,7 @@ public interface RaceService {
 
     void saveDriver(Race race);
 
-    void deleteRaceByRaceId(int id);
+    void deleteRaceByRaceId(Long id);
 
 
 }

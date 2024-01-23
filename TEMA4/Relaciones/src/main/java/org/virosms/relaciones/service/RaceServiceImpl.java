@@ -34,7 +34,7 @@ public class RaceServiceImpl implements RaceService {
     }
 
     @Override
-    public void deleteRaceByRaceId(int id) {
+    public void deleteRaceByRaceId(Long id) {
         raceRepository.deleteRaceByRaceId(id);
     }
 
