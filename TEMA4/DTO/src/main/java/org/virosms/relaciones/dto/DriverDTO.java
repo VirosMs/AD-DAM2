@@ -5,5 +5,5 @@ public record DriverDTO(
         String code,
         String fullname,
         String nationality,
-        String constructor
+        ConstructorDTO constructor
 ) {}
