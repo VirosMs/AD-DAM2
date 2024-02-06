@@ -1,6 +1,9 @@
 package org.virosms.relaciones.controller;
 
+import org.springframework.data.domain.Page;
+import org.springframework.http.HttpStatus;
 import org.virosms.relaciones.dto.DriverDTO;
+import org.virosms.relaciones.dto.DriverDetail;
 import org.virosms.relaciones.model.Driver;
 
 import org.virosms.relaciones.service.DriverService;
@@ -32,6 +35,16 @@ public class DriverRestController {
     @GetMapping("/drivers/")
     public ResponseEntity<List<DriverDTO>> getAll() {
         return ResponseEntity.ok(this.driverService.getAllDrivers());
+    }
+
+    @GetMapping("/driversDTO/")
+    public ResponseEntity<List<DriverDetail>> getAllDTO(@RequestParam(defaultValue = "0") int pageKey,
+                                          @RequestParam(defaultValue = "10") int pageSize,
+                                          @RequestParam(defaultValue = "driverId") String sortBy,
+                                          @RequestParam(defaultValue = "asc") String sortDirect) {
+
+        Page<DriverDetail> driverDTOPage = this.driverService.getAllDriversResponse(pageKey, pageSize, sortBy, sortDirect);
+        return new ResponseEntity<>(driverDTOPage.getContent(), HttpStatus.OK);
     }
 
     @PutMapping("/drivers")

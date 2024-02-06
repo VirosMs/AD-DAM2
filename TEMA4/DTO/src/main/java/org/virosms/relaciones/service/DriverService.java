@@ -1,6 +1,8 @@
 package org.virosms.relaciones.service;
 
+import org.springframework.data.domain.Page;
 import org.virosms.relaciones.dto.DriverDTO;
+import org.virosms.relaciones.dto.DriverDetail;
 import org.virosms.relaciones.model.Driver;
 import org.springframework.http.ResponseEntity;
 
@@ -11,6 +13,7 @@ public interface DriverService {
 
     List<DriverDTO> getAllDrivers();
 
+    Page<DriverDetail> getAllDriversResponse(int pageKey, int pageSize, String sortBy, String sortDirect);
 
     Optional<Driver> getDriverByCode(String code);
 
