@@ -35,7 +35,7 @@ public class DriverServiceImpl implements DriverService {
     public List<DriverDTO> getAllDrivers() {
         return driverRepository.findAll()
                 .stream()
-                .map(driver -> mapper.fromDriverAndConstructorToDriverDTO(driver, driver.getConstructor()))
+                .map(driver -> mapper.driverToDriverDTO(driver, driver.getConstructor()))
                 .toList();
     }
 
