@@ -36,7 +36,7 @@
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/chaarrsan/IdeaProjects/AD-DAM2/TEMA4/Relaciones",
+    "last_opened_file_path": "/home/chaarrsan/IdeaProjects/AD-DAM2",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -71,6 +71,7 @@
       <workItem from="1706019222508" duration="24000" />
       <workItem from="1706019252390" duration="11000" />
       <workItem from="1707234730546" duration="77000" />
+      <workItem from="1708022037651" duration="10000" />
     </task>
     <servers />
   </component>
