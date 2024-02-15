@@ -1,5 +1,5 @@
 
-
+//Clase Pojo
 public record Book (String isbn, String title, String author, int pages) implements Comparable<Book>{
 
     @Override

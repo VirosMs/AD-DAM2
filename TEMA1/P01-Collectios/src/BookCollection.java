@@ -13,6 +13,8 @@ public class BookCollection {
                 cantidad++;
         }
 
+
+
         System.out.println("Pregunta 1: Hay " + cantidad + " libros con mas de 500 paginas.");
     }
 

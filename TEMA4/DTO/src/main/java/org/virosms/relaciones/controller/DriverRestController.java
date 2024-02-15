@@ -1,16 +1,14 @@
 package org.virosms.relaciones.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 import org.virosms.relaciones.dto.DriverDTO;
 import org.virosms.relaciones.dto.DriverDetail;
 import org.virosms.relaciones.model.Driver;
-
 import org.virosms.relaciones.service.DriverService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-
-import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -39,9 +37,9 @@ public class DriverRestController {
 
     @GetMapping("/driversDTO/")
     public ResponseEntity<List<DriverDetail>> getAllDTO(@RequestParam(defaultValue = "0") int pageKey,
-                                          @RequestParam(defaultValue = "10") int pageSize,
-                                          @RequestParam(defaultValue = "driverId") String sortBy,
-                                          @RequestParam(defaultValue = "asc") String sortDirect) {
+                                                        @RequestParam(defaultValue = "10") int pageSize,
+                                                        @RequestParam(defaultValue = "driverId") String sortBy,
+                                                        @RequestParam(defaultValue = "asc") String sortDirect) {
 
         Page<DriverDetail> driverDTOPage = this.driverService.getAllDriversResponse(pageKey, pageSize, sortBy, sortDirect);
         return new ResponseEntity<>(driverDTOPage.getContent(), HttpStatus.OK);
@@ -49,7 +47,7 @@ public class DriverRestController {
 
     @PutMapping("/drivers")
     public ResponseEntity<Driver> update(@RequestBody Driver driver) {
-        if(driver.getDriverId() == null) {
+        if (driver.getDriverId() == null) {
             return ResponseEntity.badRequest().build();
         }
 
@@ -59,7 +57,7 @@ public class DriverRestController {
 
     @PostMapping("/drivers")
     public ResponseEntity<Driver> create(@RequestBody Driver driver) {
-        if(driver == null || driver.getDriverId() != null) {
+        if (driver == null || driver.getDriverId() != null) {
             return ResponseEntity.badRequest().build();
         }
 
@@ -69,7 +67,7 @@ public class DriverRestController {
 
     @DeleteMapping("/drivers/{code}")
     public ResponseEntity<Driver> delete(@PathVariable String code) {
-        if(code == null) {
+        if (code == null) {
             return ResponseEntity.badRequest().build();
         }
 
