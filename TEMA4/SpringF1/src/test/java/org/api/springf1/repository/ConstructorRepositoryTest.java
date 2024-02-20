@@ -18,7 +18,7 @@ class ConstructorRepositoryTest {
 
     @Container
     @ServiceConnection
-    static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgre:15.5");
+    static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:15.5");
 
     @Autowired
     ConstructorRepository constructorRepository;
