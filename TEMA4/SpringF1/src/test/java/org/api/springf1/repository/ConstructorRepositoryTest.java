@@ -16,6 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @DataJpaTest
 class ConstructorRepositoryTest {
 
+
     @Container
     @ServiceConnection
     static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:15.5");
@@ -29,6 +30,7 @@ class ConstructorRepositoryTest {
     void setUp() {
         constructor = new Constructor();
         constructor.setRef("ref");
+        constructor.setName("name"); // Asegúrate de establecer un valor para 'name'
         constructorRepository.save(constructor);
     }
 
